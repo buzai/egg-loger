@@ -45,8 +45,17 @@ exports.loger = {
 ```js
 // {app_root}/config/config.default.js
 exports.loger = {
+    enable: true,
+    formats: 'short'
 };
+
+if this enable=true , so all the request will loged
+
+if this enable=false , you need add app.loger in where router you need to log;
+eg: app.get('/', app.loger, 'home.index');
+
 ```
+about formats , it is koa-log arguments, default is 'dev'. if you need more formats, Please see [koa-log]: https://github.com/vicanso/koa-log
 
 see [config/config.default.js](config/config.default.js) for more detail.
 
